@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:schema_1748884919412="http://www.example.org/schema/1748884919412" xmlns:wsdl_1748884919361="http://www.example.org/wsdl/1748884919361" xmi:id="_9ZSUkD_TEfCIRJwaGlIvsQ" targetNamespace="http://tns.tibco.com/bw/composite/TIBCOBW6_SOAPWSOverHttp" name="TIBCOBW6_SOAPWSOverHttp" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_I_tTMD_WEfCB6c7M0Xi0pQ" name="SOAPWSOverHttp" promote="ComponentProcess/SOAPWSOverHttp">
+    <sca:interface.wsdl xmi:id="_I_yywD_WEfCB6c7M0Xi0pQ" interface="http://www.example.org/wsdl/1748884919361#wsdl.interface(SOAPWSOverHttp)" scaext:wsdlLocation="../Service%20Descriptors/SOAPWSOverHttp.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_pgYBsD_ZEfCB6c7M0Xi0pQ" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/9b0dd64f83924c98847ada42405dd422/SOAPServiceBinding" portTypeQName="wsdl_1748884919361:SOAPWSOverHttp" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/TIBCOBW6_SOAPWSOverHttp/Service%20Descriptors/SOAPWSOverHttp.wsdl">
+      <bindingType xmi:id="_pgeIUD_ZEfCB6c7M0Xi0pQ"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_KPdHAD_aEfCB6c7M0Xi0pQ" endpointURI="/SOAPServiceBinding/sOAPWSOverHttp/" httpConnector="tibcobw6_soapwsoverhttp.HTTPConnectorResource"/>
+      <operationConfiguration xmi:id="_pgjA0D_ZEfCB6c7M0Xi0pQ" operationName="add" action="add" actionNeeded="true">
+        <bindingType xmi:id="_pgjA0T_ZEfCB6c7M0Xi0pQ"/>
+        <messageConfiguration xmi:id="_pgjA0j_ZEfCB6c7M0Xi0pQ" messageQName="wsdl_1748884919361:addRequest" wsdlLocation="platform:/resource/TIBCOBW6_SOAPWSOverHttp/Service%20Descriptors/SOAPWSOverHttp.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_pgjA0z_ZEfCB6c7M0Xi0pQ" partName="parameters" partElementName="schema_1748884919412:addRequest"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_pgjA1D_ZEfCB6c7M0Xi0pQ" messageQName="wsdl_1748884919361:addResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/TIBCOBW6_SOAPWSOverHttp/Service%20Descriptors/SOAPWSOverHttp.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_pgjA1T_ZEfCB6c7M0Xi0pQ" partName="parameters" partElementName="schema_1748884919412:addResponse"/>
+        </messageConfiguration>
+        <context xmi:id="_pgjA1j_ZEfCB6c7M0Xi0pQ">
+          <inputMapping xmi:id="_pgjA1z_ZEfCB6c7M0Xi0pQ"/>
+          <outputMapping xmi:id="_pgjA2D_ZEfCB6c7M0Xi0pQ" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_pgjA2T_ZEfCB6c7M0Xi0pQ" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="_-kotYD_TEfCIRJwaGlIvsQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_-k0TkD_TEfCIRJwaGlIvsQ" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_-k2v0D_TEfCIRJwaGlIvsQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_-k6aMD_TEfCIRJwaGlIvsQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_-lBH4D_TEfCIRJwaGlIvsQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_-lBH4T_TEfCIRJwaGlIvsQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_-lGncD_TEfCIRJwaGlIvsQ" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_-lMuED_TEfCIRJwaGlIvsQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_-lQYcD_TEfCIRJwaGlIvsQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_9hJ3ID_TEfCIRJwaGlIvsQ" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_9hJ3IT_TEfCIRJwaGlIvsQ" processName="tibcobw6_soapwsoverhttp.SOAPWSOverHttp"/>
+    <sca:service xmi:id="_I_q28D_WEfCB6c7M0Xi0pQ" name="SOAPWSOverHttp">
+      <sca:interface.wsdl xmi:id="_I_q28T_WEfCB6c7M0Xi0pQ" interface="http://www.example.org/wsdl/1748884919361#wsdl.interface(SOAPWSOverHttp)" scaext:wsdlLocation="../Service%20Descriptors/SOAPWSOverHttp.wsdl"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>
