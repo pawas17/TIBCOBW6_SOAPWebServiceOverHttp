@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:extns="http://www.example.org/schema/1748884919412" xmlns:tns="http://www.example.org/wsdl/1748884919361" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SOAPWSOverHttp" targetNamespace="http://www.example.org/wsdl/1748884919361">
+  <wsdl:import namespace="http://www.example.org/schema/1748884919412"/>
+  <wsdl:message name="addRequest">
+    <wsdl:part element="extns:addRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addResponse">
+    <wsdl:part element="extns:addResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SOAPWSOverHttp">
+    <wsdl:operation name="add">
+      <wsdl:input message="tns:addRequest" name="addInput"/>
+      <wsdl:output message="tns:addResponse" name="addOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

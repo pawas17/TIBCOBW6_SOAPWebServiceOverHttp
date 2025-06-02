@@ -1,1 +1,0 @@
-# TIBCOBW6_SOAPWebServiceOverHttp
