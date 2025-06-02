@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:ns="http://www.example.org/wsdl/1748884919361" xmlns:ns0="http://www.example.org/schema/1748884919412" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SOAPWSOverHttp" targetNamespace="http://www.example.org/wsdl/1748884919361">
+  <wsdl:types>
+    <xsd:schema xmlns:tns="http://www.example.org/schema/1748884919412" elementFormDefault="unqualified" targetNamespace="http://www.example.org/schema/1748884919412">
+      <xsd:element name="addRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="num1" type="xsd:integer"/>
+            <xsd:element name="Num2" type="xsd:integer"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="xsd:integer"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="addRequest">
+    <wsdl:part element="ns0:addRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addResponse">
+    <wsdl:part element="ns0:addResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SOAPWSOverHttp">
+    <wsdl:operation name="add">
+      <wsdl:input message="ns:addRequest" name="addInput"/>
+      <wsdl:output message="ns:addResponse" name="addOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPServiceBinding" type="ns:SOAPWSOverHttp">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="add" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SOAPWSOverHttp">
+    <wsdl:port binding="ns:SOAPServiceBinding" name="SOAPWSOverHttpSOAP">
+      <soap:address location="http://localhost:8081/SOAPServiceBinding/sOAPWSOverHttp/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

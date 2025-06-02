@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="1780e399-72c1-4334-8f75-ebc91627f770" activeEnvironment="Default" name="TIBCOBW6_SOAPWSOverHTTP" resourceRoot="" soapui-version="5.8.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="45a3a813-871f-4ad1-a50e-29746699ee65" wsaVersion="NONE" name="SOAPServiceBinding" type="wsdl" bindingName="{http://www.example.org/wsdl/1748884919361}SOAPServiceBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/GitHub/SOAPWSOverHttp_concrete.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\GitHub\SOAPWSOverHttp_concrete.wsdl"><con:part><con:url>file:\D:\GitHub\SOAPWSOverHttp_concrete.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SOAPWSOverHttp" targetNamespace="http://www.example.org/wsdl/1748884919361" xmlns:ns="http://www.example.org/wsdl/1748884919361" xmlns:ns0="http://www.example.org/schema/1748884919412" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="unqualified" targetNamespace="http://www.example.org/schema/1748884919412" xmlns:tns="http://www.example.org/schema/1748884919412">
+      <xsd:element name="addRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="num1" type="xsd:integer"/>
+            <xsd:element name="Num2" type="xsd:integer"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="xsd:integer"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="addRequest">
+    <wsdl:part element="ns0:addRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addResponse">
+    <wsdl:part element="ns0:addResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SOAPWSOverHttp">
+    <wsdl:operation name="add">
+      <wsdl:input message="ns:addRequest" name="addInput"/>
+      <wsdl:output message="ns:addResponse" name="addOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPServiceBinding" type="ns:SOAPWSOverHttp">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="add" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SOAPWSOverHttp">
+    <wsdl:port binding="ns:SOAPServiceBinding" name="SOAPWSOverHttpSOAP">
+      <soap:address location="http://localhost:8081/SOAPServiceBinding/sOAPWSOverHttp/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8081/SOAPServiceBinding/sOAPWSOverHttp/</con:endpoint></con:endpoints><con:operation id="e9843d87-fc03-4285-8fa6-4b69dde73dbd" isOneWay="false" action="add" name="add" bindingOperationName="add" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b39976c7-a648-4645-bf91-0ccf44c74ea9" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/SOAPServiceBinding/sOAPWSOverHttp/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.example.org/schema/1748884919412">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:addRequest>\r
+         <num1>50</num1>\r
+         <Num2>100</Num2>\r
+      </ns:addRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="add"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
