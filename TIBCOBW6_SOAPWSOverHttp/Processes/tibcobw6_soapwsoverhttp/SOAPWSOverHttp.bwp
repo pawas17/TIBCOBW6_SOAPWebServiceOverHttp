@@ -131,7 +131,7 @@
     </tibex:Types>
     <tibex:ProcessInfo createdBy="ADMIN"
         createdOn="Mon Jun 02 22:36:44 IST 2025" description=""
-        modifiedBy="ADMIN" modifiedOn="Mon Jun 02 23:39:10 IST 2025"
+        modifiedBy="ADMIN" modifiedOn="Fri Jun 06 09:22:38 IST 2025"
         modifiers="public" productVersion="6.2.2 V18 2015-07-14"
         scalable="true" singleton="true" stateless="false" type="IT"/>
     <tibex:ProcessTemplateConfigurations/>
